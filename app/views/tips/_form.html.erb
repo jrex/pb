@@ -1,25 +1,94 @@
-<%= simple_form_for(@tip) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :received_at %>
-    <%= f.input :tx_id %>
-    <%= f.input :name %>
-    <%= f.input :email %>
-    <%= f.input :btc_amount_in_satoshis %>
-    <%= f.input :ltc_amount_in_satoshis %>
-    <%= f.input :doge_amount_in_satoshis %>
-    <%= f.input :sender_address %>
-    <%= f.input :usd_value_in_cents %>
-    <%= f.input :btc_fee_in_satoshis %>
-    <%= f.input :ltc_fee_in_satoshis %>
-    <%= f.input :doge_fee_in_satoshis %>
-    <%= f.input :recipient_address %>
-    <%= f.association :campaign %>
-    <%= f.input :fee_in_usd %>
+<%= form_for @tip, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :received_at, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.datetime_select :received_at, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :tx_id, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :tx_id, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :name, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :email, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :email, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :btc_amount_in_satoshis, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :btc_amount_in_satoshis, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :ltc_amount_in_satoshis, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :ltc_amount_in_satoshis, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :doge_amount_in_satoshis, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :doge_amount_in_satoshis, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :sender_address, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :sender_address, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :usd_value_in_cents, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :usd_value_in_cents, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :btc_fee_in_satoshis, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :btc_fee_in_satoshis, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :ltc_fee_in_satoshis, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :ltc_fee_in_satoshis, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :doge_fee_in_satoshis, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :doge_fee_in_satoshis, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :recipient_address, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :recipient_address, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :fee_in_usd, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :fee_in_usd, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  tips_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

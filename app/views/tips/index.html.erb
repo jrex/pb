@@ -1,30 +1,33 @@
-<h1>Listing tips</h1>
-
-<table>
+<%- model_class = Tip -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Tip %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Received at</th>
-      <th>Tx</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Btc amount in satoshis</th>
-      <th>Ltc amount in satoshis</th>
-      <th>Doge amount in satoshis</th>
-      <th>Sender address</th>
-      <th>Usd value in cents</th>
-      <th>Btc fee in satoshis</th>
-      <th>Ltc fee in satoshis</th>
-      <th>Doge fee in satoshis</th>
-      <th>Recipient address</th>
-      <th>Campaign</th>
-      <th>Fee in usd</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:received_at) %></th>
+      <th><%= model_class.human_attribute_name(:tx_id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:btc_amount_in_satoshis) %></th>
+      <th><%= model_class.human_attribute_name(:ltc_amount_in_satoshis) %></th>
+      <th><%= model_class.human_attribute_name(:doge_amount_in_satoshis) %></th>
+      <th><%= model_class.human_attribute_name(:sender_address) %></th>
+      <th><%= model_class.human_attribute_name(:usd_value_in_cents) %></th>
+      <th><%= model_class.human_attribute_name(:btc_fee_in_satoshis) %></th>
+      <th><%= model_class.human_attribute_name(:ltc_fee_in_satoshis) %></th>
+      <th><%= model_class.human_attribute_name(:doge_fee_in_satoshis) %></th>
+      <th><%= model_class.human_attribute_name(:recipient_address) %></th>
+      <th><%= model_class.human_attribute_name(:fee_in_usd) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @tips.each do |tip| %>
       <tr>
+        <td><%= tip.id %></td>
         <td><%= tip.received_at %></td>
         <td><%= tip.tx_id %></td>
         <td><%= tip.name %></td>
@@ -38,16 +41,22 @@
         <td><%= tip.ltc_fee_in_satoshis %></td>
         <td><%= tip.doge_fee_in_satoshis %></td>
         <td><%= tip.recipient_address %></td>
-        <td><%= tip.campaign %></td>
         <td><%= tip.fee_in_usd %></td>
-        <td><%= link_to 'Show', tip %></td>
-        <td><%= link_to 'Edit', edit_tip_path(tip) %></td>
-        <td><%= link_to 'Destroy', tip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l tip.created_at, format: :long %></td>
+        <td>
+          <%= link_to tip_path(tip), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to tip_path(tip), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Tip', new_tip_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_tip_path,
+            :class => 'btn btn-primary' %>

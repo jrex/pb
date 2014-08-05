@@ -1,0 +1,26 @@
+<%= simple_form_for(@campaign) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :recipient %>
+    <%= f.input :redirect_url %>
+    <%= f.input :description %>
+    <%= f.input :bitcoin %>
+    <%= f.input :dogecoin %>
+    <%= f.input :litecoin %>
+    <%= f.input :btc_address %>
+    <%= f.input :dogecoin_address %>
+    <%= f.input :litecoin_address %>
+    <%= f.input :active %>
+    <%= f.input :btc_total_in_satoshis %>
+    <%= f.input :ltc_total_in_satoshis %>
+    <%= f.input :doge_total_in_satoshis %>
+    <%= f.input :archived %>
+    <%= f.association :user %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

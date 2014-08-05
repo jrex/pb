@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @campaign.title %>
+</p>
+
+<p>
+  <strong>Recipient:</strong>
+  <%= @campaign.recipient %>
+</p>
+
+<p>
+  <strong>Redirect url:</strong>
+  <%= @campaign.redirect_url %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @campaign.description %>
+</p>
+
+<p>
+  <strong>Bitcoin:</strong>
+  <%= @campaign.bitcoin %>
+</p>
+
+<p>
+  <strong>Dogecoin:</strong>
+  <%= @campaign.dogecoin %>
+</p>
+
+<p>
+  <strong>Litecoin:</strong>
+  <%= @campaign.litecoin %>
+</p>
+
+<p>
+  <strong>Btc address:</strong>
+  <%= @campaign.btc_address %>
+</p>
+
+<p>
+  <strong>Dogecoin address:</strong>
+  <%= @campaign.dogecoin_address %>
+</p>
+
+<p>
+  <strong>Litecoin address:</strong>
+  <%= @campaign.litecoin_address %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @campaign.active %>
+</p>
+
+<p>
+  <strong>Btc total in satoshis:</strong>
+  <%= @campaign.btc_total_in_satoshis %>
+</p>
+
+<p>
+  <strong>Ltc total in satoshis:</strong>
+  <%= @campaign.ltc_total_in_satoshis %>
+</p>
+
+<p>
+  <strong>Doge total in satoshis:</strong>
+  <%= @campaign.doge_total_in_satoshis %>
+</p>
+
+<p>
+  <strong>Archived:</strong>
+  <%= @campaign.archived %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @campaign.user %>
+</p>
+
+<%= link_to 'Edit', edit_campaign_path(@campaign) %> |
+<%= link_to 'Back', campaigns_path %>

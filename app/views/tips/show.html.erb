@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Received at:</strong>
+  <%= @tip.received_at %>
+</p>
+
+<p>
+  <strong>Tx:</strong>
+  <%= @tip.tx_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tip.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @tip.email %>
+</p>
+
+<p>
+  <strong>Btc amount in satoshis:</strong>
+  <%= @tip.btc_amount_in_satoshis %>
+</p>
+
+<p>
+  <strong>Ltc amount in satoshis:</strong>
+  <%= @tip.ltc_amount_in_satoshis %>
+</p>
+
+<p>
+  <strong>Doge amount in satoshis:</strong>
+  <%= @tip.doge_amount_in_satoshis %>
+</p>
+
+<p>
+  <strong>Sender address:</strong>
+  <%= @tip.sender_address %>
+</p>
+
+<p>
+  <strong>Usd value in cents:</strong>
+  <%= @tip.usd_value_in_cents %>
+</p>
+
+<p>
+  <strong>Btc fee in satoshis:</strong>
+  <%= @tip.btc_fee_in_satoshis %>
+</p>
+
+<p>
+  <strong>Ltc fee in satoshis:</strong>
+  <%= @tip.ltc_fee_in_satoshis %>
+</p>
+
+<p>
+  <strong>Doge fee in satoshis:</strong>
+  <%= @tip.doge_fee_in_satoshis %>
+</p>
+
+<p>
+  <strong>Recipient address:</strong>
+  <%= @tip.recipient_address %>
+</p>
+
+<p>
+  <strong>Campaign:</strong>
+  <%= @tip.campaign %>
+</p>
+
+<p>
+  <strong>Fee in usd:</strong>
+  <%= @tip.fee_in_usd %>
+</p>
+
+<%= link_to 'Edit', edit_tip_path(@tip) %> |
+<%= link_to 'Back', tips_path %>

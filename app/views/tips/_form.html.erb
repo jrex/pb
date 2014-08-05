@@ -1,0 +1,25 @@
+<%= simple_form_for(@tip) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :received_at %>
+    <%= f.input :tx_id %>
+    <%= f.input :name %>
+    <%= f.input :email %>
+    <%= f.input :btc_amount_in_satoshis %>
+    <%= f.input :ltc_amount_in_satoshis %>
+    <%= f.input :doge_amount_in_satoshis %>
+    <%= f.input :sender_address %>
+    <%= f.input :usd_value_in_cents %>
+    <%= f.input :btc_fee_in_satoshis %>
+    <%= f.input :ltc_fee_in_satoshis %>
+    <%= f.input :doge_fee_in_satoshis %>
+    <%= f.input :recipient_address %>
+    <%= f.association :campaign %>
+    <%= f.input :fee_in_usd %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
